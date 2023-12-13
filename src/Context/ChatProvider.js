@@ -18,6 +18,7 @@ const ChatProvider = ({ children }) => {
       navigate("/");
     }
   }, [navigate]);
+
   return (
     <ChatContext.Provider
       value={{ user, setUser, selectedChat, setSelectedChat, chats, setChats }}
