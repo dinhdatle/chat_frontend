@@ -64,7 +64,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   useEffect(() => {
-    socket = io("http://localhost:4000/");
+    socket = io("https://chat-server-zj8k.onrender.com/");
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     // socket.on("typing", () => setTyping(true));
