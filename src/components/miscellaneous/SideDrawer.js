@@ -156,7 +156,7 @@ const SideDrawer = () => {
         </Tooltip>
         <Text fontSize="2xl" fontFamily="Work sans">
           {" "}
-          Talk a Message
+          Message
         </Text>
         <div>
           <Menu>
