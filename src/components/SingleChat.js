@@ -19,7 +19,6 @@ import "./style.css";
 import ScrollableChat from "./ScrollableChat";
 import { io } from "socket.io-client";
 
-const ENDPOINT = "http://localhost:6000";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -45,7 +44,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       };
       setLoading(true);
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://chat-server-5gca.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -64,7 +63,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   useEffect(() => {
-    socket = io("https://chat-server-zj8k.onrender.com/");
+    socket = io("https://chat-server-5gca.onrender.com");
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     // socket.on("typing", () => setTyping(true));
@@ -101,7 +100,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
 
         const { data } = await axios.post(
-          "/api/message",
+          "https://chat-server-5gca.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,
