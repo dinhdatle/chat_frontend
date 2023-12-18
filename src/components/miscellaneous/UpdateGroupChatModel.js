@@ -54,7 +54,7 @@ const UpdateGroupChatModel = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.put(
-        "https://chat-server-5gca.onrender.com/api/chat/groupremove",
+        "https://chat-server-19os.onrender.com/api/chat/groupremove",
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -99,7 +99,7 @@ const UpdateGroupChatModel = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.put(
-        "https://chat-server-5gca.onrender.com/api/chat/rename",
+        "https://chat-server-19os.onrender.com/api/chat/rename",
         { chatId: selectedChat._id, chatName: groupChatName },
         config
       );
@@ -155,7 +155,7 @@ const UpdateGroupChatModel = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.put(
-        `https://chat-server-5gca.onrender.com/api/chat/groupadd`,
+        `https://chat-server-19os.onrender.com/api/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -183,7 +183,7 @@ const UpdateGroupChatModel = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.get(
-        `https://chat-server-5gca.onrender.com/api/user?search=${search}`,
+        `https://chat-server-19os.onrender.com/api/user?search=${search}`,
         config
       );
       setLoading(false);

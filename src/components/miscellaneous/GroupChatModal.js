@@ -47,7 +47,7 @@ const GroupChatModal = ({ children }) => {
       };
 
       const { data } = await axios.get(
-        `https://chat-server-5gca.onrender.com/api/user?search=${search}`,
+        `https://chat-server-19os.onrender.com/api/user?search=${search}`,
         config
       );
       setLoading(false);
@@ -84,7 +84,7 @@ const GroupChatModal = ({ children }) => {
       };
 
       const { data } = await axios.post(
-        "https://chat-server-5gca.onrender.com/api/chat/group",
+        "https://chat-server-19os.onrender.com/api/chat/group",
         { name: groupChatName, users: JSON.stringify(selectedUsers) },
         config
       );
