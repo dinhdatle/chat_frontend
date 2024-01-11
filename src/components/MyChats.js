@@ -5,6 +5,7 @@ import axios from "axios";
 import { AddIcon } from "@chakra-ui/icons";
 import { getSender } from "../config/ChatLogics";
 import GroupChatModal from "./miscellaneous/GroupChatModal";
+import apiService from "../app/apiService";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
@@ -20,10 +21,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get(
-        "https://chat-server-19os.onrender.com/api/chat",
-        config
-      );
+      const { data } = await apiService.get("/api/chat", config);
       setChats(data);
     } catch (error) {
       toast({

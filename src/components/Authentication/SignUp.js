@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import apiService from "../../app/apiService";
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
@@ -91,8 +92,8 @@ const SignUp = () => {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post(
-        "https://chat-server-19os.onrender.com/api/user",
+      const { data } = await apiService.post(
+        "/api/user",
         {
           name,
           email,

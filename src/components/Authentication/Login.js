@@ -12,6 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import apiService from "../../app/apiService";
 import axios from "axios";
 
 const Login = () => {
@@ -43,8 +44,13 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post(
-        "https://chat-server-19os.onrender.com/api/user/login",
+      // const { data } = await axios.post(
+      //   "/api/user/login",
+      //   { email, password },
+      //   config
+      // );
+      const { data } = await apiService.post(
+        "/api/user/login",
         { email, password },
         config
       );

@@ -18,6 +18,7 @@ import axios from "axios";
 import "./style.css";
 import ScrollableChat from "./ScrollableChat";
 import { io } from "socket.io-client";
+import apiService from "../app/apiService";
 
 var socket, selectedChatCompare;
 
@@ -43,8 +44,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         },
       };
       setLoading(true);
-      const { data } = await axios.get(
-        `https://chat-server-19os.onrender.com/api/message/${selectedChat._id}`,
+      const { data } = await apiService.get(
+        `/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -99,8 +100,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
 
-        const { data } = await axios.post(
-          "https://chat-server-19os.onrender.com/api/message",
+        const { data } = await apiService.post(
+          "/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,
